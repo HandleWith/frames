@@ -1,0 +1,390 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.logo_img {
+  width: 5rem;
+  height: 8rem;
+}
+
+.logo_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.white,
+.black {
+  padding: 30px 0 30px 0
+}
+
+.nav_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: inherit
+}
+
+.black {
+  background: #000;
+  color: #fdfdfd
+}
+
+.img_wrapper {
+  overflow: hidden;
+  height: 650px;
+  position: relative;
+  margin-bottom: 30px
+}
+
+.img_wrapper>img {
+  position: absolute;
+  top: -65vw;
+}
+
+.video {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  position: relative;
+}
+
+.poster_wrapper {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.video_poster {
+  width: 100%;
+  height: 100%;
+}
+
+.poster_wrapper.hide {
+  display: none;
+}
+
+.video_section {
+  position: relative;
+}
+
+.play {
+  background: center/cover no-repeat url("./../assets/img/play.svg");
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  filter: brightness(0) saturate(100%) invert(64%) sepia(75%) saturate(0%) hue-rotate(144deg) brightness(104%) contrast(113%);;
+}
+
+@media (max-width: 800px) {
+  .img_wrapper {
+    height: 600px;
+  }
+  .img_wrapper>img {
+    top: -50vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .img_wrapper {
+    height: 500px;
+  }
+  .img_wrapper>img {
+    top: -50vw;
+  }
+}
+
+.content_title,
+.content_subtitle {
+  text-align: center;
+}
+
+.main_title {
+  text-align: center;
+}
+
+.content_subtitle {
+  padding-top: 10px;
+}
+
+.swiper {
+  padding: 20px 0 20px 0 !important;
+}
+
+.swiper-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-weight: 100;
+}
+
+.card_item>img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.card_title {
+  padding-top: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.content_description {
+  padding-top: 30px
+}
+
+@media (max-width: 1290px) {
+  .card_title {
+    font-size: 14px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 980px) {
+  .card_title {
+    width: 150px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 560px) {
+  .swiper-slide {
+    width: 30%;
+  }
+}
+
+@media (max-width: 500px) {
+  .img_wrapper {
+    height: 450px;
+  }
+}
+
+.description_list {
+  list-style-type: "\2705" !important;
+  padding-left: 20px;
+}
+
+.moto_img {
+  padding-top: 30px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.eapps-widget-toolbar {
+  display: none !important;
+}
+
+.instagram_section {
+  position: relative;
+  padding-bottom: 0px !important
+}
+
+.header_wrapper {
+  position: relative;
+}
+
+.header_nav.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0 15px 0;
+  z-index: 2100000000;
+  background: #000;
+}
+
+.block {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 40px;
+  bottom: 6px;
+  left: 0;
+  z-index: 2000000000;
+}
+
+.form_section .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type=text]:focus {
+  outline: none;
+  border-bottom: 2px solid #03880e
+}
+
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.submit {
+  border: none;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+
+.form_section {
+  padding-top: 0px !important
+}
+
+.form_title {
+  padding-bottom: 30px
+}
+
+.instagram {
+  padding-bottom: 10px;
+}
+
+.submit_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px
+}
+
+.privacy_wrapper {
+  padding-top: 10px
+}
+
+.privacy_wrapper>span>a {
+  color: inherit
+}
+
+.socials_wrapper {
+  padding-top: 30px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social {
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(4%) saturate(0%) hue-rotate(343deg) brightness(103%) contrast(100%);
+}
+
+.social.instagram {
+  background: center/cover no-repeat url(./../assets/img/instagram.svg);
+}
+
+.social.tiktok {
+  background: center/cover no-repeat url(./../assets/img/tiktok.svg);
+}
+
+.social.telegram {
+  background: center/cover no-repeat url(./../assets/img/telegram.svg);
+}
+
+.privacy_link {
+  color: inherit;
+  padding-top: 30px
+}
+
+
+
